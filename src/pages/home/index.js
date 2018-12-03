@@ -6,12 +6,13 @@ import Recommend from './components/Recommend';
 import Writer from './components/Writer';
 import { actionCreators } from './store';
 import { BackTop } from './style';
-
-import { 
+import Slider from "react-slick";
+import {
 	HomeWrapper,
 	HomeLeft,
 	HomeRight
 } from './style';
+
 
 class Home extends PureComponent {
 
@@ -20,10 +21,28 @@ class Home extends PureComponent {
 	}
 
 	render() {
+		var settings = {
+			dots: true,
+			infinite: true,
+			speed: 500,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			autoplay: true
+		  };
 		return (
 			<HomeWrapper>
 				<HomeLeft>
-					<img className='banner-img' alt='' src="//upload.jianshu.io/admin_banners/web_images/4318/60781ff21df1d1b03f5f8459e4a1983c009175a5.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540" />
+					<Slider {...settings}>
+						<div>
+						<img className='banner-img' alt='' src="//upload.jianshu.io/admin_banners/web_images/4581/af5d55e899ff5e06b90fee32c5403772cc9f6e04.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540" />
+						</div>
+						<div>
+						<img className='banner-img' alt='' src="//upload.jianshu.io/admin_banners/web_images/4582/2db83cc6f08d13c2f83002238ca32b784266c4fb.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540" />
+						</div>
+						<div>
+						<img className='banner-img' alt='' src="//upload.jianshu.io/admin_banners/web_images/4579/0e3caa20d3d30658dc4b393d1ea105baa7e78248.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540" />
+						</div>
+					</Slider>
 					<Topic />
 					<List />
 				</HomeLeft>
